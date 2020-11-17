@@ -36,15 +36,12 @@
     "slugify": "^1.4.5",
     "stripe": "^8.121.0",
     "validator": "^13.1.17",
+    "axios": "^0.21.0",
+    "mongoose": "^5.10.15",
+    "nodemon": "^2.0.6",
     "xss-clean": "^0.1.1"
   },
   "devDependencies": {
-    "axios": "^0.21.0",
-    "mongoose": "^5.10.11",
-    "nodemon": "^2.0.6",
     "parcel-bundler": "^1.12.4"
-  },
-  "engines": {
-    "node": "^10"
   }
 }
