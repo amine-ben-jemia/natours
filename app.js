@@ -45,7 +45,7 @@ app.use(
     ]
   })
     )
-app.use(compression)
+app.use(compression())
 // Limit request from the same api
 const limiter = rateLimit({
   max: 100,
