@@ -2,7 +2,7 @@
   "name": "nattours",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "node server.js",
     "dev": "NODE_ENV=development nodemon server.js",
