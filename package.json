@@ -44,7 +44,7 @@
     "nodemon": "^2.0.6",
     "parcel-bundler": "^1.12.4"
   },
-  "engines":{
-    "node":">=10.0.0"
+  "engines": {
+    "node": "^10"
   }
 }
