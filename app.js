@@ -15,7 +15,7 @@ const mongoSanitize = require('express-mongo-sanitize')
 const xss = require('xss-clean')
 const hpp = require('hpp')
 const app = express()
-
+const compression = require('compression')
 
 
 app.set('view engine','pug')
@@ -45,7 +45,7 @@ app.use(
     ]
   })
     )
-
+app.use(compression)
 // Limit request from the same api
 const limiter = rateLimit({
   max: 100,
@@ -72,7 +72,6 @@ app.use(xss())
 app.use((req, res, next) => {
   
   req.requestTime = new Date().toISOString()
-  //console.log(req.cookies);
   next()
 })
 

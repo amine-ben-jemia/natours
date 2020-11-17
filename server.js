@@ -6,8 +6,6 @@ const port = process.env.PORT || 3000
 
 
 process.on('uncaughtException',err=>{
-    console.log('UNHANDLED Exception !! Shutting down ...')
-    console.log(err.name,err.message)
     server.close(()=>{
         process.exit(1)
     })
@@ -36,8 +34,6 @@ const server = app.listen(port,()=>{
 
 
 process.on('unhandledRejection', err => {
-    console.log(err.name,err.message)
-    console.log('UNHANDLED REJECTION !! Shutting down ...')
     server.close(()=>{
         process.exit(1)
     })  

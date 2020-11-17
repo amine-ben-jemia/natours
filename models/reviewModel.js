@@ -74,7 +74,6 @@ reviewSchema.statics.calcAverageRatings = async function (tourId){
             }
         }
     ])
-    console.log(stats)
     await Tour.findById(tourId,{
         ratingsQauntity: stats[0].nRating,
         ratingsAverage:stats[0].avgRating,
@@ -91,7 +90,6 @@ reviewSchema.post('save',function(){
 // Update ratingsQauntity and ratingsAverage when updating and deleting
 reviewSchema.pre(/^findOneAnd/, async function(next){
     this.r = await this.findOne()
-    console.log(this.r)
     next()
 })
 

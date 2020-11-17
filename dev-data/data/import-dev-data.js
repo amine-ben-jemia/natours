@@ -32,10 +32,8 @@ const importData = async ()=>{
         await Tour.create(tours)
         await User.create(users,{validateBeforeSave: false})
         await Review.create(reviews)
-        console.log('Data successfuly loaded !')
         process.exit()
     }catch(err){
-        console.log(err)
     }
 }
 

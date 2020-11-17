@@ -13,9 +13,7 @@ export const bookTour = async tourId =>{
             sessionId: session.data.session.id
         })
 
-        console.log(session)
     }catch(err){
-        console.log(err)
         showAlert('error',err)
     }
 
