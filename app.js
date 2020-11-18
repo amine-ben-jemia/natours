@@ -14,6 +14,7 @@ const bookingRouter = require('./routes/bookingRoutes')
 const mongoSanitize = require('express-mongo-sanitize')
 const xss = require('xss-clean')
 const hpp = require('hpp')
+const cors = require('cors')
 const compression = require('compression')
 
 
@@ -26,13 +27,24 @@ app.enable('trust proxy')
 app.set('view engine','pug')
 app.set('views',path.join(__dirname,'views'))
 
+
+// 1) GLOBAL MIDDLEWARES
+//Implement CORS
+
+app.use(cors())
+// Access-Control-Allow-Origin
+app.options('*',cors())
+// app.options('api/v1/tours/:id',cors())
+
+
+
 // Serving static files
 app.use(express.static(path.join(__dirname,'public')))
 
 
 // Set Security HTTP headers
-// app.use(helmet())
-// 1) MIDDLEWARES
+app.use(helmet())
+
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'))
 }
