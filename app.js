@@ -47,7 +47,7 @@ app.use(
     ]
   })
     )
-//app.use(compression())
+app.use(compression())
 // Limit request from the same api
 const limiter = rateLimit({
   max: 100,
@@ -67,7 +67,7 @@ app.use(cookieParser())
 // Data sanitization against NoSQL query injection
 app.use(mongoSanitize())
 // Data sanizataion againt XSS
-//app.use(xss())
+app.use(xss())
 
 
 // Test middleware
