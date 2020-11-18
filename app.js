@@ -12,7 +12,7 @@ const userRouter = require('./routes/userRoutes')
 const reviewRouter = require('./routes/reviewRoutes')
 const bookingRouter = require('./routes/bookingRoutes')
 const mongoSanitize = require('express-mongo-sanitize')
-//const xss = require('xss-clean')
+const xss = require('xss-clean')
 const hpp = require('hpp')
 const compression = require('compression')
 
